@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="manifest" href="./manifest.json">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coastline Burgers Menu Board</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="default-mode">
+    <div id="overlay" class="mode-overlay"></div>
+
+    <main class="menu-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo-section">
+                <i data-lucide="utensils-crosses" class="logo-icon"></i>
+                <h1>COASTLINE BURGERS</h1>
+            </div>
+            <div class="info-section">
+                <div class="locations">
+                    <span><i data-lucide="map-pin"></i> Downtown</span>
+                    <span><i data-lucide="map-pin"></i> Bayside</span>
+                </div>
+                <div id="clock" class="clock">00:00:00</div>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h2 id="special-heading">DAILY SPECIALS</h2>
+                <p id="special-subtext">Fresh. Local. Grilled to perfection.</p>
+            </div>
+            <div class="hero-image">
+                <img src="https://loremflickr.com/800/600/burger,grilled?random=1" alt="Featured Burger">
+            </div>
+        </section>
+
+        <!-- Menu Grid -->
+        <div class="menu-grid" id="menu-grid">
+            <!-- Burgers Section -->
+            <section class="menu-section burgers">
+                <div class="section-header">
+                    <i data-lucide="sandwich"></i>
+                    <h3>SIGNATURE BURGERS</h3>
+                </div>
+                <ul class="menu-list" id="burger-list">
+                    <!-- Dynamic content -->
+                </ul>
+            </section>
+
+            <!-- Sides & Shakes Section -->
+            <section class="menu-section extras">
+                <div class="section-header">
+                    <i data-lucide="ice-cream"></i>
+                    <h3>SIDES & SHAKES</h3>
+                </div>
+                <ul class="menu-list" id="extras-list">
+                    <!-- Dynamic content -->
+                </ul>
+            </section>
+
+            <!-- Promo Section (Lunch Rush) -->
+            <section class="menu-section promo" id="promo-section">
+                <div class="promo-card">
+                    <div class="promo-badge">LUNCH COMBO</div>
+                    <h3>THE PERFECT PAIR</h3>
+                    <p>Burger + Fries + Soda</p>
+                    <div class="promo-price">$13.99</div>
+                    <small>Available 11am - 2pm</small>
+                </div>
+            </section>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Join our loyalty program! | coastlineburgers.com</p>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('./sw.js')
+          .then(function (reg) { console.log('[PWA] SW registered:', reg.scope); })
+          .catch(function (err) { console.warn('[PWA] SW registration failed:', err); });
+      });
+    }
+  </script>
+</body>
+</html>
