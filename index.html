@@ -10,76 +10,57 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body class="default-mode">
-    <div id="overlay" class="mode-overlay"></div>
+    <div id="app-container">
+        <div id="overlay" class="mode-overlay"></div>
 
-    <main class="menu-container">
-        <!-- Header -->
-        <header class="header">
-            <div class="logo-section">
-                <i data-lucide="utensils-crosses" class="logo-icon"></i>
-                <h1>COASTLINE BURGERS</h1>
-            </div>
-            <div class="info-section">
-                <div class="locations">
-                    <span><i data-lucide="map-pin"></i> Downtown</span>
-                    <span><i data-lucide="map-pin"></i> Bayside</span>
+        <main class="menu-container">
+            <!-- Header -->
+            <header class="header">
+                <div class="logo-section">
+                    <img data-bind-src="storefront.logo" data-bind-attr="alt:storefront.store_name" src="" alt="Logo" class="logo-img" style="width: 40px; height: 40px; object-fit: contain;">
+                    <h1 data-bind-text="storefront.store_name">COASTLINE BURGERS</h1>
                 </div>
-                <div id="clock" class="clock">00:00:00</div>
-            </div>
-        </header>
-
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-content">
-                <h2 id="special-heading">DAILY SPECIALS</h2>
-                <p id="special-subtext">Fresh. Local. Grilled to perfection.</p>
-            </div>
-            <div class="hero-image">
-                <img src="https://loremflickr.com/800/600/burger,grilled?random=1" alt="Featured Burger">
-            </div>
-        </section>
-
-        <!-- Menu Grid -->
-        <div class="menu-grid" id="menu-grid">
-            <!-- Burgers Section -->
-            <section class="menu-section burgers">
-                <div class="section-header">
-                    <i data-lucide="sandwich"></i>
-                    <h3>SIGNATURE BURGERS</h3>
+                <div class="info-section">
+                    <div class="locations" id="locations-list">
+                        <!-- Dynamic locations -->
+                    </div>
+                    <div id="clock" class="clock" data-bind-show="app_settings.show_clock">00:00:00</div>
                 </div>
-                <ul class="menu-list" id="burger-list">
-                    <!-- Dynamic content -->
-                </ul>
+            </header>
+
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="hero-content">
+                    <h2 id="special-heading" data-bind-text="hero_section.heading">DAILY SPECIALS</h2>
+                    <p id="special-subtext" data-bind-text="hero_section.subtext">Fresh. Local. Grilled to perfection.</p>
+                </div>
+                <div class="hero-image">
+                    <img data-bind-src="hero_section.image" data-bind-attr="alt:hero_section.heading" src="https://loremflickr.com/800/600/burger,grilled?random=1" alt="Featured Burger">
+                </div>
             </section>
 
-            <!-- Sides & Shakes Section -->
-            <section class="menu-section extras">
-                <div class="section-header">
-                    <i data-lucide="ice-cream"></i>
-                    <h3>SIDES & SHAKES</h3>
-                </div>
-                <ul class="menu-list" id="extras-list">
-                    <!-- Dynamic content -->
-                </ul>
-            </section>
+            <!-- Menu Grid -->
+            <div class="menu-grid" id="menu-grid">
+                <!-- Dynamic categories and products will be rendered here -->
+            </div>
 
             <!-- Promo Section (Lunch Rush) -->
-            <section class="menu-section promo" id="promo-section">
+            <section class="menu-section promo" id="promo-section" data-bind-show="promo_section.show_promo">
                 <div class="promo-card">
-                    <div class="promo-badge">LUNCH COMBO</div>
-                    <h3>THE PERFECT PAIR</h3>
-                    <p>Burger + Fries + Soda</p>
-                    <div class="promo-price">$13.99</div>
-                    <small>Available 11am - 2pm</small>
+                    <div class="promo-badge" data-bind-text="promo_section.badge">LUNCH COMBO</div>
+                    <h3 data-bind-text="promo_section.title">THE PERFECT PAIR</h3>
+                    <p data-bind-text="promo_section.description">Burger + Fries + Soda</p>
+                    <div class="promo-price" data-bind-currency="promo_section.price">$13.99</div>
+                    <small data-bind-text="promo_section.availability">Available 11am - 2pm</small>
                 </div>
             </section>
-        </div>
 
-        <!-- Footer -->
-        <footer class="footer">
-            <p>Join our loyalty program! | coastlineburgers.com</p>
-        </footer>
-    </main>
+            <!-- Footer -->
+            <footer class="footer">
+                <p data-bind-text="storefront.footer_text">Join our loyalty program! | coastlineburgers.com</p>
+            </footer>
+        </main>
+    </div>
 
     <script src="script.js"></script>
     <script>

@@ -1,0 +1,184 @@
+{
+  "app_id": "aigen-1778529009405",
+  "document_version": 1,
+  "sections": {
+    "storefront": {
+      "store_name": {
+        "type": "text",
+        "label": "Store Name",
+        "value": "COASTLINE BURGERS"
+      },
+      "logo": {
+        "type": "file",
+        "label": "Logo",
+        "value": "assets/logo_k7m2x9_1778.png",
+        "meta": {
+          "accepted_formats": ["png", "jpg", "svg"],
+          "path": "assets/"
+        }
+      },
+      "locations": {
+        "type": "collection",
+        "label": "Locations",
+        "item_schema": {
+          "id": { "type": "text", "label": "ID" },
+          "name": { "type": "text", "label": "Location Name" }
+        },
+        "value": [
+          { "id": "loc_d1t2w3", "name": "Downtown" },
+          { "id": "loc_b1y2s3", "name": "Bayside" }
+        ]
+      },
+      "footer_text": {
+        "type": "text",
+        "label": "Footer Text",
+        "value": "Join our loyalty program! | coastlineburgers.com"
+      }
+    },
+    "app_settings": {
+      "primary_color": {
+        "type": "color",
+        "label": "Primary Color",
+        "value": "#00b7af"
+      },
+      "secondary_color": {
+        "type": "color",
+        "label": "Secondary Color",
+        "value": "#6a7071"
+      },
+      "accent_color": {
+        "type": "color",
+        "label": "Accent Color",
+        "value": "#ffcc00"
+      },
+      "background_color": {
+        "type": "color",
+        "label": "Background Color",
+        "value": "#10181f"
+      },
+      "text_color": {
+        "type": "color",
+        "label": "Text Color",
+        "value": "#ffffff"
+      },
+      "show_clock": {
+        "type": "boolean",
+        "label": "Show Clock",
+        "value": true
+      }
+    },
+    "hero_section": {
+      "heading": {
+        "type": "text",
+        "label": "Heading",
+        "value": "DAILY SPECIALS"
+      },
+      "subtext": {
+        "type": "text",
+        "label": "Subtext",
+        "value": "Fresh. Local. Grilled to perfection."
+      },
+      "image": {
+        "type": "file",
+        "label": "Hero Image",
+        "value": "assets/hero_j1k2l3_1778.png",
+        "meta": {
+          "accepted_formats": ["jpg", "png"],
+          "path": "assets/"
+        }
+      },
+      "lunch_heading": {
+        "type": "text",
+        "label": "Lunch Heading",
+        "value": "LUNCH RUSH SPECIALS"
+      },
+      "lunch_subtext": {
+        "type": "text",
+        "label": "Lunch Subtext",
+        "value": "Fuel up for the rest of your day."
+      },
+      "late_night_heading": {
+        "type": "text",
+        "label": "Late Night Heading",
+        "value": "LATE NIGHT BITES"
+      },
+      "late_night_subtext": {
+        "type": "text",
+        "label": "Late Night Subtext",
+        "value": "Cravings satisfied. Anytime."
+      }
+    },
+    "promo_section": {
+      "show_promo": {
+        "type": "boolean",
+        "label": "Show Promo",
+        "value": true
+      },
+      "badge": {
+        "type": "text",
+        "label": "Badge Text",
+        "value": "LUNCH COMBO"
+      },
+      "title": {
+        "type": "text",
+        "label": "Promo Title",
+        "value": "THE PERFECT PAIR"
+      },
+      "description": {
+        "type": "text",
+        "label": "Promo Description",
+        "value": "Burger + Fries + Soda"
+      },
+      "price": {
+        "type": "number",
+        "label": "Promo Price",
+        "value": 13.99,
+        "meta": { "format": "currency" }
+      },
+      "availability": {
+        "type": "text",
+        "label": "Availability Text",
+        "value": "Available 11am - 2pm"
+      }
+    },
+    "categories": {
+      "type": "collection",
+      "label": "Categories",
+      "item_schema": {
+        "id": { "type": "text", "label": "ID" },
+        "name": { "type": "text", "label": "Category Name" },
+        "icon": { "type": "text", "label": "Lucide Icon Name" }
+      },
+      "value": [
+        { "id": "cat_b1u2r3", "name": "SIGNATURE BURGERS", "icon": "sandwich" },
+        { "id": "cat_s1h2a3", "name": "SIDES & SHAKES", "icon": "ice-cream" }
+      ]
+    },
+    "products": {
+      "type": "collection",
+      "label": "Products",
+      "item_schema": {
+        "id": { "type": "text", "label": "ID" },
+        "name": { "type": "text", "label": "Product Name" },
+        "price": { "type": "number", "label": "Price", "meta": { "format": "currency" } },
+        "category": { "type": "linked", "label": "Category", "meta": { "collection": "categories", "display_field": "name" } },
+        "late_night": { "type": "boolean", "label": "Available Late Night" },
+        "thumbnail": {
+          "type": "file",
+          "label": "Thumbnail",
+          "meta": { "accepted_formats": ["jpg", "png"], "path": "assets/products/" }
+        }
+      },
+      "value": [
+        { "id": "prod_c1l2a3", "name": "The Classic", "price": 8.99, "category": "cat_b1u2r3", "late_night": true, "thumbnail": "assets/burger_classic_a1b2c3_1778.png" },
+        { "id": "prod_d2c3h4", "name": "Double Cheese", "price": 10.99, "category": "cat_b1u2r3", "late_night": true, "thumbnail": "assets/burger_double_d4e5f6_1778.png" },
+        { "id": "prod_s3b4a5", "name": "Smokey Bacon", "price": 12.49, "category": "cat_b1u2r3", "late_night": false },
+        { "id": "prod_g4v5e6", "name": "Garden Veggie", "price": 9.49, "category": "cat_b1u2r3", "late_night": false },
+        { "id": "prod_s5s6f7", "name": "Sea Salt Fries", "price": 3.49, "category": "cat_s1h2a3", "late_night": true, "thumbnail": "assets/fries_g7h8i9_1778.png" },
+        { "id": "prod_c6o7r8", "name": "Crispy Onion Rings", "price": 4.49, "category": "cat_s1h2a3", "late_night": false },
+        { "id": "prod_v7s8h9", "name": "Vanilla Shake", "price": 5.49, "category": "cat_s1h2a3", "late_night": true },
+        { "id": "prod_c8s9h1", "name": "Chocolate Shake", "price": 5.49, "category": "cat_s1h2a3", "late_night": true }
+      ]
+    }
+  }
+}
